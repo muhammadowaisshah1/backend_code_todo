@@ -1,0 +1,26 @@
+# FastAPI Framework
+fastapi==0.115.5
+
+# Database ORM
+sqlalchemy[asyncio]==2.0.36
+sqlmodel==0.0.22
+
+# ASGI Server
+uvicorn[standard]==0.32.1
+
+# Configuration Management
+pydantic-settings==2.6.1
+python-dotenv==1.0.0
+
+# JWT Authentication
+python-jose[cryptography]==3.3.0
+
+# Password Hashing
+passlib[bcrypt]==1.7.4
+
+# PostgreSQL Async Driver
+psycopg[binary]==3.3.2
+
+# Additional Dependencies
+python-multipart==0.0.18  # For form data handling
+email-validator==2.2.0    # For email validation
