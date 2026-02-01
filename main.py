@@ -9,6 +9,8 @@ This module initializes the FastAPI app with:
 """
 
 import os
+import sys
+import asyncio
 from contextlib import asynccontextmanager
 from datetime import datetime
 from fastapi import FastAPI
@@ -17,6 +19,10 @@ from dotenv import load_dotenv
 
 from app.database import create_db_and_tables, close_db
 from app.config import settings
+
+# Fix for Windows: psycopg requires SelectorEventLoop instead of ProactorEventLoop
+if sys.platform == 'win32':
+    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 
 # Load environment variables
 load_dotenv()

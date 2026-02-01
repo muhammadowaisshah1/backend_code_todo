@@ -47,7 +47,7 @@ python init_db.py
 
 6. Run development server:
 ```bash
-uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8001
 ```
 
 ## Environment Variables
