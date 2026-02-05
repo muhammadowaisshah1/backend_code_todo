@@ -26,9 +26,12 @@ if not DATABASE_URL:
 
 # Create async engine
 # echo=True enables SQL query logging (disable in production)
+# Use DEBUG environment variable to control SQL logging
+DEBUG_MODE = os.getenv("DEBUG", "False").lower() == "true"
+
 engine = create_async_engine(
     DATABASE_URL,
-    echo=True,  # Set to False in production
+    echo=DEBUG_MODE,  # Only log SQL queries in debug mode
     future=True,
     pool_pre_ping=True,  # Verify connections before using them
     pool_size=10,  # Maximum number of connections in the pool

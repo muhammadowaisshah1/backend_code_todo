@@ -11,7 +11,17 @@ services:
       - key: BETTER_AUTH_SECRET
         sync: false
       - key: CORS_ORIGINS
-        value: http://localhost:3000
+        # IMPORTANT: Update this with your actual Vercel frontend URL after deployment
+        # Format: https://your-app.vercel.app,https://your-app-*.vercel.app
+        value: http://localhost:3000,https://todo-app-frontend.vercel.app
       - key: DEBUG
-        value: false
+        value: "false"
+      - key: JWT_ALGORITHM
+        value: HS256
+      - key: JWT_EXPIRY_DAYS
+        value: "7"
+      - key: SERVER_HOST
+        value: 0.0.0.0
+      - key: SERVER_PORT
+        value: "8000"
     healthCheckPath: /health
