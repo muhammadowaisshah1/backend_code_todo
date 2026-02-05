@@ -11,9 +11,8 @@ services:
       - key: BETTER_AUTH_SECRET
         sync: false
       - key: CORS_ORIGINS
-        # IMPORTANT: Update this with your actual Vercel frontend URL after deployment
-        # Format: https://your-app.vercel.app,https://your-app-*.vercel.app
-        value: http://localhost:3000,https://todo-app-frontend.vercel.app
+        # Updated with actual Vercel deployment URLs
+        value: http://localhost:3000,https://frontend-psi-ten-81.vercel.app,https://frontend-muhammad-owais-shahs-projects.vercel.app,https://frontend-muhammadowaisshah1-muhammad-owais-shahs-projects.vercel.app
       - key: DEBUG
         value: "false"
       - key: JWT_ALGORITHM
